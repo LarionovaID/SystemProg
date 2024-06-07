@@ -16,65 +16,43 @@
     <div class="main">
         <h1>Список дел</h1>
     
-        <form action="" class="forma">
-            <input type="text" placeholder="Новый элемент списка">
-            <button type="submit" class="btn_formAdd">Добавить</button>
+        <!-- <form action="javascript:addTask()" class="forma">
+            <input type="text" placeholder="Новый элемент списка" id="taskInput">
+            <button class="btn_formAdd">Добавить</button>
             <button type="reset" class="btn_formClean">Очистить всё</button>
-        </form>
-    
-    
-        <ul>
-            <li>
-                <label>
-                    <input type="checkbox" class="chbox">
-                    <div>
-                        <p>Почесать кошку </p>
-                        <p class="date">
-                            <sub>от 24.08.2023</sub>
-                        </p>
-                    </div>
-                    
-                </label>
-                <button class="btn_del">
-                    X
-                    <!-- <img src="favicon_io/favicon-16x16.png" alt=""> -->
-                </button>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" class="chbox">
-                    <div>
-                        <p>Полить картошку </p>
-                        <p class="date">
-                            <sub>от 04.05.2022</sub>
-                        </p>
-                    </div>
-
-                </label>
-                <button class="btn_del">
-                    X
-                    <!-- <img src="favicon_io/favicon-16x16.png" alt=""> -->
-                </button>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" class="chbox">
-                    <div>
-                        <p>Сложить в лукошко </p>
-                        <p class="date">
-                            <sub>от 14.05.2022</sub>
-                        </p>
-                    </div>
-
-                </label>
-                <button class="btn_del">
-                    X
-                    <!-- <img src="favicon_io/favicon-16x16.png" alt=""> -->
-                </button>
-            </li>
-        </ul>
+        </form> -->
         
-    </div>
+        <div class="head">
+           
+            <div class="add-task">
+                <input type="text" id="taskInput">
+                <button class="addNew" onclick="addTask()">Добавить</button>
+                <button class="cleanAll" onclick="delAllTask()">Очистить всё</button>
+                <select id="sortOptions" onchange="sortTasks()">
+                    <option value="newest">Самое новое</option>
+                    <option value="oldest">Самое старое</option>
+                    <option value="az">А-Я</option>
+                    <option value="za">Я-А</option>
+                </select>
+            </div>
+            
+            <div class="filters">
+                <a href="#" class="filter-link" onclick="filterTasks('all')">Все</a>
+                <a href="#" class="filter-link" onclick="filterTasks('completed-bg')">Сделанные</a>
+                <a href="#" class="filter-link" onclick="filterTasks('uncompleted')">Не сделанные</a>
+            </div>
+        </div>
+    
+        <div class="body">
+            <div class="task">
+                <ol id="taskList">
+              
+                </ol>
+            </div>
+        </div>
+
+    <script src="script.js"></script>
+    <script src="taskManager.js"></script>
 
 </body>
 
